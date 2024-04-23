@@ -9,8 +9,8 @@ AccelStepper stepper(AccelStepper::HALF4WIRE, IN1, IN3, IN2, IN4);
 
 const long stepsPerRevolution = 2048;
 
-#define ROTATIONS 15 //total rotations 
-#define ROTATIONS_IN_ONE_DIRECTION ROTATIONS/2 //half of the rotations in each direction
+#define ROTATIONS 16 //total rotations 
+#define ROTATIONS_IN_ONE_DIRECTION ROTATIONS/2 //how many rotations will be without stopping motor.
 const int TimeSleepS = 3600; //3600 = 1 hour , 1800 = 30min 
 
 void setup()
