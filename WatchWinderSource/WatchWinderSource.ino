@@ -9,18 +9,18 @@ AccelStepper stepper(AccelStepper::HALF4WIRE, IN1, IN3, IN2, IN4);
 
 const long stepsPerRevolution = 2048;
 
-#define ROTATIONS 15
-#define ROTATIONS_IN_ONE_DIRECTION ROTATIONS/2
-int TimeSleepS = 480;
+#define ROTATIONS 15 //total rotations 
+#define ROTATIONS_IN_ONE_DIRECTION ROTATIONS/2 //half of the rotations in each direction
+const int TimeSleepS = 3600; //3600 = 1 hour , 1800 = 30min 
 
 void setup()
 {
     Serial.begin(9600);     // 9600 bps
     Serial.println("");
-    Serial.println("pluciorx Watch Rotor Programm v1.0 ");
+    Serial.println("pluciorx@gmail.com Watch Rotor Programm v1.01 ");
     stepper.setMaxSpeed(1650);
     stepper.setAcceleration(500);
-    stepper.moveTo(stepsPerRevolution * ROTATIONS_IN_ONE_DIRECTION);
+    stepper.moveTo(stepsPerRevolution * ROTATIONS_IN_ONE_DIRECTION); 
 }
 
 void loop()
